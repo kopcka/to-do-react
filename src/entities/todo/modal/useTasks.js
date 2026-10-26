@@ -48,8 +48,6 @@ const useTasks = () => {
 
   const deleteTask = useCallback((taskId) => {
 
-    console.log('Удаляю задачу с id:', taskId) // ← проверка
-
     tasksAPI.delete(taskId)
     .then(() => dispatch({ type: 'DELETE', id: taskId }))
   }, [])
