@@ -48,6 +48,8 @@ const useTasks = () => {
 
   const deleteTask = useCallback((taskId) => {
 
+    console.log('Удаляю задачу с id:', taskId) // ← проверка
+
     tasksAPI.delete(taskId)
     .then(() => dispatch({ type: 'DELETE', id: taskId }))
   }, [])
@@ -68,7 +70,7 @@ const useTasks = () => {
     tasksAPI.add(newTask)
     .then((addedTask) => {
       dispatch({ type: 'ADD', task: addedTask })
-      callbackAfterAdding
+      callbackAfterAdding()
       setSearchQuery('')
       newTaskInputRef.current.focus()
     })

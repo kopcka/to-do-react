@@ -4,7 +4,7 @@ import RouterLink from "@/shared/ui/RouterLink";
 import styles from './TodoItem.module.scss'
 import { highlightCaseInsensitive } from "@/shared/utils/highlighted";
 
-const ToDOItem = (props) => {
+const ToDoItem = (props) => {
   const {
     className = '',
     id,
@@ -72,4 +72,4 @@ const ToDOItem = (props) => {
   )
 }
 
-export default memo(ToDOItem)
+export default memo(ToDoItem)
